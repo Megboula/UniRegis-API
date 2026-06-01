@@ -1,0 +1,7 @@
+com\project\service\InscriptionEvent.class
+com\project\model\Statut.class
+com\project\model\Inscription.class
+com\project\model\InscriptionDTO.class
+com\project\service\InscriptionService.class
+com\project\resource\InscriptionResource.class
+com\project\resource\RestApplication.class

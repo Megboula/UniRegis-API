@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources PUBLIC
+    "-//GlassFish.org//DTD GlassFish Application Server 3.1 Resource Definitions//EN"
+    "http://glassfish.org/dtds/glassfish-resources_1_5.dtd">
+<resources>
+    <jdbc-connection-pool
+        name="projectPool"
+        res-type="javax.sql.XADataSource"
+        datasource-classname="org.postgresql.xa.PGXADataSource">
+        <property name="serverName" value="project_db"/>
+        <property name="portNumber" value="5432"/>
+        <property name="databaseName" value="project_university"/>
+        <property name="user" value="admin"/>
+        <property name="password" value="password"/>
+    </jdbc-connection-pool>
+
+    <jdbc-resource
+        pool-name="projectPool"
+        jndi-name="jdbc/projectDS"/>
+</resources>

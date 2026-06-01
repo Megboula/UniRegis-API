@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: project_db
+    environment:
+      POSTGRES_DB: project_university
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5432"  # ← changé de 5432 en 5433
+
+  payara:
+    image: payara/server-full:6.2024.1-jdk21
+    container_name: project_server
+    depends_on:
+      - postgres
+    ports:
+      - "9192:8080"  # ← changé de 9191 en 9192
+      - "4849:4848"  # ← déjà changé
+    volumes:
+      - ./target/project.war:/opt/payara/deployments/project.war
